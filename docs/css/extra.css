@@ -1,0 +1,33 @@
+.hidden {
+    display: none;
+}
+
+/* traget blank link */
+a[target="_blank"] {
+    white-space: nowrap;
+    position: relative;
+    padding-right: 20px; 
+}
+
+a[target="_blank"]::after {
+    content: "";
+    display: inline-block;
+    background-image: url('browser-target-blank.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+p:has(a.back-link), p:has(a.next-link) {
+    display: flex;
+    justify-content: space-between;
+}
+
+a.next-link {
+    margin-left: auto; /* Rechts ausrichten */
+  }
