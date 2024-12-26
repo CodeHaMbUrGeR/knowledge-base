@@ -1,0 +1,75 @@
+site_name: Knowledge Base
+
+nav:
+  - Mathe:
+    - Statistik: math/statistic.md
+    - Stochastik: math/stochastic.md
+  - Python: 
+    - Buildins: python/buildins.md
+    - pydantic: python/pydantic.md
+    - Tipps: python/python-tips.md
+  - Software:
+    - Blender: software/blender/index.md
+    - git: software/git/index.md
+    - MkDocs: software/mkdocs/index.md
+    - VS Code: software/vscode/index.md
+
+not_in_nav: |
+  index.md
+  python/*
+  snippets/*
+
+draft_docs: |
+  drafts/ 
+
+plugins:
+  - search
+
+markdown_extensions:
+  - attr_list
+  - tables
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - admonition
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+
+extra_css:
+  - css/extra.css
+
+extra_javascript:
+  - js/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+theme:
+  name: material
+  logo: assets/logo_brain_cloud.png
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
