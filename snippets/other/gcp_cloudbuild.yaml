@@ -1,0 +1,27 @@
+steps:
+  # Initialize Terraform
+  - name: 'hashicorp/terraform'
+    args:
+      - 'init'
+
+  # Validate Terraform configuration
+  - name: 'hashicorp/terraform'
+    args:
+      - 'validate'
+
+  # Plan Terraform
+  - name: 'hashicorp/terraform'
+    args:
+      - 'plan'
+      - '-out=tfplan'
+  
+  # Apply Terraform configuration
+  - name: 'hashicorp/terraform'
+    args:
+      - 'apply'
+      - '-auto-approve'
+      - 'tfplan'
+
+logsBucket: 'gcp-terraform/cloudbuild-logs'
+options:
+  logging: GCS_ONLY
